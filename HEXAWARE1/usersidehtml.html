@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Question Builder</title>
+</head>
+<body>
+    <h1>Automated Question Builder</h1>
+    <form action="{{ url_for('generate') }}" method="POST">
+        <label for="topic">Select Topic:</label>
+        <select name="topic" id="topic">
+            {% for topic in topics %}
+                <option value="{{ topic }}">{{ topic }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="difficulty">Select Difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            {% for difficulty in difficulties %}
+                <option value="{{ difficulty }}">{{ difficulty }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="num_questions">Number of Questions:</label>
+        <input type="number" name="num_questions" id="num_questions" min="1" value="5">
+        <br><br>
+
+        <button type="submit">Generate Question Bank</button>
+    </form>
+</body>
+</html>

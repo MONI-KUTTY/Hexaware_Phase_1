@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Users</title>
+</head>
+<body>
+    <h2>Manage Users</h2>
+    <form method="POST" action="{{ url_for('admin_users') }}">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br><br>
+        <label for="role">Role:</label>
